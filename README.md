@@ -46,7 +46,11 @@ Comando utilizado:
 nmap -sV -p 21,22,80,445,139 192.168.56.101
 ```
 
-*Imagem*: [![Resultado do Nmap](images1/nmap_enum.png)](images1/nmap_enum.png)
+*Imagem*: 
+<a href="images1/nmap_enum.png">
+    <img src="images1/nmap_enum.png" alt="Resultado do Nmap" width="500">
+</a>
+
 
 O serviço FTP (porta 21) foi identificado como ativo.
 
