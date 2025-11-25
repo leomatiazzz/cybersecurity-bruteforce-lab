@@ -46,7 +46,7 @@ Comando utilizado:
 nmap -sV -p 21,22,80,445,139 192.168.56.101
 ```
 
-*Imagem*: [![Resultado do Nmap](/images1/nmap_enum.png)](/images1/nmap_enum.png)
+*Imagem*: [![Resultado do Nmap](images1/nmap_enum.png)](images1/nmap_enum.png)
 
 O serviço FTP (porta 21) foi identificado como ativo.
 
@@ -58,7 +58,7 @@ Após identificar a porta 21 aberta, testamos a conexão:
 ftp 192.168.56.101
 ```
 
-*Imagem*: [![Testando a conexão FTP](/images1/ftp_test.png)](/images1/ftp_test.png)
+*Imagem*: [![Testando a conexão FTP](images1/ftp_test.png)](images1/ftp_test.png)
 
 
 Conexão aceita → serviço realmente ativo.
@@ -79,7 +79,7 @@ echo -e '123456\npassword\nqwerty\nmsfadmin' > pass.txt
 
 Essas listas ficaram armazenadas no diretório atual do Kali.
 
-Imagem: [![Gerando as wordlists](/images1/wordlists.png)](/images1/wordlists.png)
+Imagem: [![Gerando as wordlists](images1/wordlists.png)](images1/wordlists.png)
 
 ## 5. Ataque de Força Bruta com Medusa
 
@@ -102,7 +102,7 @@ Parâmetros importantes:
 
 **-t 6 → threads simultâneas**
 
-*Imagem*: [![Realizando o ataque com Medusa](/images1/medusa_attack.png)](/images1/medusa_attack.png)
+*Imagem*: [![Realizando o ataque com Medusa](images1/medusa_attack.png)](images1/medusa_attack.png)
 
 Resultado:
 
@@ -119,7 +119,7 @@ Testamos novamente o login no FTP usando as credenciais descobertas:
 ftp 192.168.56.101
 ```
 
-*Imagem*: [![Nova conexão com o FTP](/images1/ftp_success.png)](/images1/ftp_success.png)
+*Imagem*: [![Nova conexão com o FTP](images1/ftp_success.png)](images1/ftp_success.png)
 
 Login efetuado com sucesso. O ataque funcionou.
 
