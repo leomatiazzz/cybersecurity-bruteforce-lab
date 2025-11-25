@@ -85,7 +85,6 @@ Wordlist de senhas
 echo -e '123456\npassword\nqwerty\nmsfadmin' > pass.txt
 ```
 
-
 Essas listas ficaram armazenadas no diretório atual do Kali.
 
 *Imagem*:
