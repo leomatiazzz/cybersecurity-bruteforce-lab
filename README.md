@@ -70,6 +70,7 @@ ftp 192.168.56.101
 </a>
 
 
+
 Conexão aceita → serviço realmente ativo.
 
 ## 4. Criando Wordlists (Usuários e Senhas)
