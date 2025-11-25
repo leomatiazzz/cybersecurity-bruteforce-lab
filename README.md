@@ -49,7 +49,7 @@ nmap -sV -p 21,22,80,445,139 192.168.56.101
 *Imagem*: 
 
 <a href="images1/nmap_enum.png">
-    <img src="images1/nmap_enum.png" alt="Resultado do Nmap" width="500">
+    <img src="images1/nmap_enum.png" alt="Resultado do Nmap" width="800">
 </a>
 
 
@@ -66,7 +66,7 @@ ftp 192.168.56.101
 *Imagem*:
 
 <a href="images1/ftp_test.png">
-    <img src="images1/ftp_test.png" alt="Testando a conexão FTP" width="500">
+    <img src="images1/ftp_test.png" alt="Testando a conexão FTP" width="800">
 </a>
 
 
@@ -91,7 +91,7 @@ Essas listas ficaram armazenadas no diretório atual do Kali.
 *Imagem*:
 
 <a href="images1/wordlists.png">
-    <img src="images1/wordlists.png" alt="Gerando as wordlists" width="500">
+    <img src="images1/wordlists.png" alt="Gerando as wordlists" width="800">
 </a>
 
 
@@ -119,7 +119,7 @@ Parâmetros importantes:
 *Imagem*:
 
 <a href="images1/medusa_attack.png">
-    <img src="images1/medusa_attack.png" alt="Realizando o ataque com Medusa" width="500">
+    <img src="images1/medusa_attack.png" alt="Realizando o ataque com Medusa" width="800">
 </a>
 
 
@@ -141,7 +141,7 @@ ftp 192.168.56.101
 *Imagem*:
 
 <a href="images1/ftp_success.png">
-    <img src="images1/ftp_success.png" alt="Nova conexão com o FTP" width="500">
+    <img src="images1/ftp_success.png" alt="Nova conexão com o FTP" width="800">
 </a>
 
 
