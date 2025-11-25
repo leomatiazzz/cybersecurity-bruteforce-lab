@@ -63,7 +63,11 @@ Após identificar a porta 21 aberta, testamos a conexão:
 ftp 192.168.56.101
 ```
 
-*Imagem*: [![Testando a conexão FTP](images1/ftp_test.png)](images1/ftp_test.png)
+*Imagem*:
+
+<a href="images1/ftp_test.png">
+    <img src="images1/ftp_test.png" alt="Testando a conexão FTP" width="500">
+</a>
 
 
 Conexão aceita → serviço realmente ativo.
@@ -84,7 +88,12 @@ echo -e '123456\npassword\nqwerty\nmsfadmin' > pass.txt
 
 Essas listas ficaram armazenadas no diretório atual do Kali.
 
-Imagem: [![Gerando as wordlists](images1/wordlists.png)](images1/wordlists.png)
+*Imagem*:
+
+<a href="images1/wordlists.png">
+    <img src="images1/wordlists.png" alt="Gerando as wordlists" width="500">
+</a>
+
 
 ## 5. Ataque de Força Bruta com Medusa
 
@@ -107,7 +116,12 @@ Parâmetros importantes:
 
 **-t 6 → threads simultâneas**
 
-*Imagem*: [![Realizando o ataque com Medusa](images1/medusa_attack.png)](images1/medusa_attack.png)
+*Imagem*:
+
+<a href="images1/medusa_attack.png">
+    <img src="images1/medusa_attack.png" alt="Realizando o ataque com Medusa" width="500">
+</a>
+
 
 Resultado:
 
@@ -124,7 +138,12 @@ Testamos novamente o login no FTP usando as credenciais descobertas:
 ftp 192.168.56.101
 ```
 
-*Imagem*: [![Nova conexão com o FTP](images1/ftp_success.png)](images1/ftp_success.png)
+*Imagem*:
+
+<a href="images1/ftp_success.png">
+    <img src="images1/ftp_success.png" alt="Nova conexão com o FTP" width="500">
+</a>
+
 
 Login efetuado com sucesso. O ataque funcionou.
 
