@@ -1,11 +1,31 @@
+# Laboratório de Auditoria e Ataques de Força Bruta
+## Kali Linux • Metasploitable 2 • DVWA • Medusa • Hydra • Enumeração SMB
+
+Este repositório documenta três práticas completas de auditoria ofensiva usando Kali Linux em ambiente controlado.
+As técnicas simulam ataques reais utilizados em pentests e campanhas de intrusão, mas em ambiente isolado, com fins exclusivamente educativos.
+
+As práticas realizadas:
+
+1. Ataque de força bruta ao FTP (Medusa)
+2. Ataques contra formulários Web (DVWA) — Medusa e Hydra
+3. Enumeração SMB + Password Spraying (Medusa)
+
+Todas as etapas incluem:
+
+- Enumeração
+- Geração de wordlists
+- Execução dos ataques
+- Validação dos resultados
+- Análise técnica e mitigação
+
+---
+
 # Prática 1 – Ataque de Força Bruta em FTP usando Kali Linux + Medusa
 
 Este laboratório tem como objetivo realizar um ataque de **força bruta no serviço FTP**
 do Metasploitable 2, utilizando o Kali Linux como máquina atacante.  
 Seguindo boas práticas de auditoria, realizamos enumeração, criação de wordlists simples,
 ataque com Medusa e validação do acesso descoberto.
-
----
 
 ##  Ambiente de Laboratório
 
@@ -16,8 +36,6 @@ ataque com Medusa e validação do acesso descoberto.
 | **Rede** | Host-Only | Comunicação segura sem afetar rede real |
 
 **Ambas as VMs funcionando corretamente.**
-
----
 
 ## 1. Introdução
 
@@ -33,8 +51,6 @@ a um atacante:
 
 O objetivo é entender como ataques de força bruta funcionam em ambientes vulneráveis e
 como se proteger.
-
----
 
 ## 2. Enumeração do Alvo (Nmap)
 
@@ -188,6 +204,14 @@ Essa documentação demonstra entendimento técnico e um fluxo claro de auditori
 
 # Prática 2 – Ataques a Formulários Web com DVWA (Medusa e Hydra)
 
+##  Ambiente de Laboratório
+
+| Máquina | IP | Função |
+|--------|----|--------|
+| **Kali Linux** | 192.168.56.105 | Atacante |
+| **Metasploitable 2** | 192.168.56.101/24 | (Não foi utilizado) |
+| **Rede** | Host-Only | Comunicação segura sem afetar rede real |
+
 ## Introdução
 
 Nesta prática exploramos vulnerabilidades em **formulários de login** presentes em aplicações Web.  
@@ -200,7 +224,6 @@ E como o sistema pode retornar falsos positivos ou resistir corretamente, depend
 
 O ambiente vulnerável escolhido foi o **DVWA – Damn Vulnerable Web Application**, que roda localmente no Kali Linux por meio do servidor Apache + MariaDB.
 
----
 
 ## 1. Preparação do Ambiente
 
