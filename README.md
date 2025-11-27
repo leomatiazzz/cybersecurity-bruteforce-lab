@@ -200,7 +200,7 @@ enumeração → wordlists → ataque → validação → mitigação.
 
 Essa documentação demonstra entendimento técnico e um fluxo claro de auditoria em ambiente controlado.
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------
 
 # Prática 2 – Ataques a Formulários Web com DVWA (Medusa e Hydra)
 
