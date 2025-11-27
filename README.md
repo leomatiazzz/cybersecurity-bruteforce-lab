@@ -210,7 +210,7 @@ Essa documentação demonstra entendimento técnico e um fluxo claro de auditori
 |--------|----|--------|
 | **Kali Linux** | 192.168.56.105 | Atacante |
 | **Metasploitable 2** | 192.168.56.101/24 | (Não foi utilizado) |
-| **Rede** | Host-Only | Comunicação segura sem afetar rede real |
+| **Rede** | Host-Only + NAT | Comunicação segura e com conexão à internet |
 
 ## Introdução
 
