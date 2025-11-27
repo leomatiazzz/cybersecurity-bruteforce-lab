@@ -406,7 +406,7 @@ As imagens desta prática estão na pasta:
 ```bash
 /images2/
 ```
--Criação das wordlists
+- Criação das wordlists
 - Ataque do Medusa
 - Ataque do Hydra
 - Login correto no DVWA
