@@ -18,6 +18,16 @@ Todas as etapas incluem:
 - Validação dos resultados
 - Análise técnica e mitigação
 
+### Estrutura do Repositório
+
+```bash
+/
+├── README.md
+├── images1/   # Prática 1
+├── images2/   # Prática 2
+└── images3/   # Prática 3
+```
+
 ---
 
 # Prática 1 – Ataque de Força Bruta em FTP usando Kali Linux + Medusa
