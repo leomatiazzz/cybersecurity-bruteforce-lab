@@ -179,10 +179,8 @@ Wordlists simples foram suficientes pois o alvo é propositalmente vulnerável.
 
 ## Conclusão
 
-Nesta prática, executamos um ataque real de força bruta contra um serviço FTP vulnerável,
-utilizando Medusa no Kali Linux.
-O laboratório permitiu compreender cada etapa do processo:
+Nesta prática, executamos um ataque real de força bruta contra um serviço FTP vulnerável, utilizando Medusa no Kali Linux. O laboratório permitiu compreender cada etapa do processo:
 enumeração → wordlists → ataque → validação → mitigação.
 
-Essa documentação demonstra entendimento técnico e um fluxo claro de auditoria em
-ambiente controlado.
+Essa documentação demonstra entendimento técnico e um fluxo claro de auditoria em ambiente controlado.
+
