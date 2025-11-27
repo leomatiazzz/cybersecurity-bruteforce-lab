@@ -421,4 +421,185 @@ Nesta prática obtivemos o conhecimento de alguns pontos muito importantes, como
 - Por que ataques web exigem ferramentas mais avançadas
 - Como CSRF protege contra automação
 
+------
+
+# Prática 3 – Enumeração SMB + Password Spraying com Medusa
+
+## 1. Introdução
+
+Nesta prática realizamos um ataque em cadeia, combinando:
+
+1. Enumeração SMB → descobrir usuários válidos
+2. Password Spraying → testar senhas fracas em vários usuários ao mesmo tempo
+
+Este tipo de ataque é extremamente comum no mundo real, principalmente em:
+
+- Ambientes corporativos
+- Servidores de arquivos
+- Redes internas invadidas por phishing
+- Infraestruturas críticas
+
+O cenário simulado:
+Você (atacante) conseguiu acesso à rede interna e detectou um servidor SMB vulnerável (Metasploitable 2).
+O objetivo é identificar usuários e tentar senhas fracas, sem bloquear contas e sem levantar alertas.
+
+## 2. Enumeração SMB com enum4linux
+
+O primeiro passo foi realizar uma enumeração completa com:
+
+```bash
+enum4linux -a 192.168.56.101 | tee enum4_output.txt
+```
+
+*Imagem*:
+
+<a href="images3/enum4linux.png">
+<img src="images3/enum4linux.png" width="800">
+</a>
+
+O uso do tee salva a saída em um arquivo para análise detalhada:
+
+```bash
+less enum4_output.txt
+```
+
+*Imagem*:
+
+<a href="images3/less_command.png">
+<img src="images3/less_command.png" width="800">
+</a>
+
+A partir desse relatório, identificamos diversos usuários cadastrados, incluindo:
+
+- `user`
+- `msfadmin`
+- `service`
+
+*Imagem*:
+
+<a href="images3/users_list.png">
+<img src="images3/users_list.png" width="800">
+</a>
+
+## 3. Criação das Wordlists (Usuários e Senhas)
+
+Criamos wordlists simples, simulando um ataque real de password spraying:
+
+Lista de usuários:
+
+```bash
+echo -e 'user\nmsfadmin\nservice' > smb_users.txt
+```
+
+Lista de senhas fracas:
+
+```bash
+echo -e 'password\n123456\nWelcome123\nmsfadmin' > senhas_spray.txt
+```
+
+*Imagem*:
+
+<a href="images3/wordlists.png">
+<img src="images3/wordlists.png" width="800">
+</a>
+
+## 4. Ataque Password Spraying com Medusa
+
+O comando utilizado:
+
+```bash
+medusa -h 192.168.56.101 -U smb_users.txt -P senhas_spray.txt -M smbnt -t 2 -T 50
+```
+
+Explicando:
+
+- -h → host alvo (Metasploitable)
+
+- -U → lista de usuários
+
+- -P → lista de senhas
+
+- -M smbnt → módulo SMB/NT do Medusa
+
+- -t 2 → 2 threads por alvo
+
+- -T 50 → até 50 tentativas simultâneas (spraying rápido e eficiente)
+
+*Imagem*:
+
+<a href="images3/medusa_smb.png">
+<img src="images3/medusa_smb.png" width="800">
+</a>
+
+### Resultado
+
+O Medusa iniciou vários `"ACCOUNT CHECK"`.
+
+E finalmente:
+
+```pgsql
+ACCOUNT FOUND: [smb] Host: 192.168.56.101 User: msfadmin Password: msfadmin
+```
+
+*Imagem*:
+
+<a href="images3/medusa_success.png">
+<img src="images3/medusa_success.png" width="800">
+</a>
+
+Isso confirma que o usuário msfadmin possui acesso SMB válido, inclusive ao compartilhamento administrativo.
+
+## 5. Validando o Acesso SMB
+
+Para testar as credenciais descobertas:
+
+```bash
+smbclient -L //192.168.56.101 -U msfadmin
+```
+
+Primeiro testamos com senha errada → acesso negado
+Depois com a senha correta → acesso permitido
+
+*Imagem*:
+
+<a href="images3/validate.png">
+<img src="images3/validate.png" width="800">
+</a>
+
+## 6. Conclusão
+
+O ataque foi realizado sem explorar falhas técnicas avançadas, exploits ou vulnerabilidades complexas. Ele foi baseado apenas em:
+
+- Enumeração pública
+- Informações expostas
+- Senhas fracas
+- Ferramentas simples e legítimas do Kali
+
+Isso reproduz exatamente como ataques reais acontecem em empresas:
+Hackers não começam com exploits; começam com informações expostas e credenciais fracas.
+
+Aprendizados principais:
+
+- O SMB pode vazar nomes de usuários facilmente
+- Password spraying é eficiente e discreto
+- Usuários com senhas fracas comprometem todo o sistema
+- Auditorias internas são essenciais
+- Medusa é extremamente eficiente para SMB
+
+## 7. Evidências
+
+Todas as imagens desta prática estão em:
+
+```bash
+/images3/
+```
+
+Incluindo:
+
+- Enumeração SMB
+- Relatório do enum4linux
+- Criação das wordlists
+- Ataque com Medusa
+- Credenciais encontradas
+- Acesso validado com smbclient
 
