@@ -435,6 +435,14 @@ Nesta prática obtivemos o conhecimento de alguns pontos muito importantes, como
 
 # Prática 3 – Enumeração SMB + Password Spraying com Medusa
 
+##  Ambiente de Laboratório
+
+| Máquina | IP | Função |
+|--------|----|--------|
+| **Kali Linux** | 192.168.56.105 | Atacante |
+| **Metasploitable 2** | 192.168.56.101/24 | Alvo |
+| **Rede** | Host-Only | Comunicação segura sem afetar rede real |
+
 ## 1. Introdução
 
 Nesta prática realizamos um ataque em cadeia, combinando:
